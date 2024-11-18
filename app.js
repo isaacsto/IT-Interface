@@ -24,7 +24,7 @@ app.post('/chat', async (req, res) => {
     ],
 });
 
-    res.json({ reply: completion.choices[0].message });
+    res.json({ reply: completion.choices[0].message.content });
   } catch (error) {
     console.error("Error calling OpenAI API:", error);
     res.status(500).json({ error: 'Something went wrong with the AI request.' });

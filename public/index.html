@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT Help Chat</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>IT Help Chat</h1>
@@ -23,7 +24,12 @@
                     body: JSON.stringify({ message: userInput })
                 });
                 const data = await response.json();
-                responseElement.textContent = data.reply;
+
+                const formattedResponse = data.reply 
+                .replace(/\n/g, "<br>")
+                .replace(/^\s*\d+\./gm, (match) => `<strong>${match}</strong>`);
+
+                responseElement.innerHTML= formattedResponse;
             } catch (error) {
                 responseElement.textContent = "Error: Could not get response";
                 console.error("Error:", error);
