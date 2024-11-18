@@ -4,7 +4,8 @@ const express = require('express');
 const OpenAI = require('openai');  // Ensure Configuration is imported
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
+
 
 const openai = new OpenAI();
 
