@@ -12,6 +12,10 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
+const cors = require("cors");
+app.use(cors({
+    origin: "https://it-interface-1.onrender.com",
+}));
 
 app.post('/chat', async (req, res) => {
   try {
