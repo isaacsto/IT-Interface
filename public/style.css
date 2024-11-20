@@ -93,5 +93,10 @@ p {
     }
     .logo-wrap {
         margin: 0 0 2rem; 
+        justify-content: flex-end;
+    }
+    .button-wrap {
+        justify-content: flex-start;
     }
 }
+
