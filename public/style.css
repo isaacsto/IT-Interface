@@ -10,8 +10,16 @@ body {
 }
 @media screen and (max-width: 768px) {
     .page-wrap {
-        width: 100%; 
-        padding: 0 40px; 
+        width: unset; 
+    }
+    .header-wrap {
+        flex-direction: column; 
+    }
+    h1 {
+        font-size: 1.5rem; 
+    }
+    .logo-wrap {
+        margin: 0 0 2rem; 
     }
 }
 h1 {
